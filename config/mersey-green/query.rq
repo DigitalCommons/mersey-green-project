@@ -11,7 +11,7 @@ PREFIX rov: <http://www.w3.org/ns/regorg#>
 PREFIX osspatialrelations: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
 PREFIX : <https://dev.lod.coop/sea-lod/mersey-green/>
 
-SELECT  ?activity ?regorg ?name ?uri ?within ?lat ?lng ?www ?tel ?email ?sameas ?desc ?primaryActivity ?street ?locality ?postcode
+SELECT  ?activity ?regorg ?name ?uri ?within ?lat ?lng ?www ?tel ?email ?sameas ?desc ?primaryActivity ?street ?locality ?postcode ?manLat ?manLng
 WHERE {
 	?uri rdf:type essglobal:SSEInitiative .
 	?uri gr:name ?name .
@@ -31,6 +31,8 @@ WHERE {
 	OPTIONAL { ?addr vcard:postal-code ?postcode . }
 	OPTIONAL { ?addr vcard:locality ?locality . }
 	OPTIONAL { ?addr osspatialrelations:within ?within . }
+	OPTIONAL { ?addr geo:lat ?manLat . } 
+	OPTIONAL { ?addr geo:long ?manLng . }
 	OPTIONAL { ?within geo:lat ?lat. }
 	OPTIONAL { ?within geo:long ?lng. }
 }
