@@ -11,29 +11,39 @@ PREFIX rov: <http://www.w3.org/ns/regorg#>
 PREFIX osspatialrelations: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
 PREFIX : <https://lod.coop/sea-lod/mersey-green/>
 
-SELECT  ?activity ?regorg ?name ?uri ?within ?lat ?lng ?www ?tel ?email ?sameas ?desc ?primaryActivity ?street ?locality ?postcode ?manLat ?manLng
+SELECT  ?activity ?regorg ?name ?uri ?within ?lat ?lng ?www ?facebook ?twitter ?tel ?email ?sameas ?desc ?primaryActivity ?street ?locality ?postcode ?manLat ?manLng
 WHERE {
-	?uri rdf:type essglobal:SSEInitiative .
-	?uri gr:name ?name .
-	OPTIONAL { ?uri foaf:homepage ?www . }
-	OPTIONAL { ?uri owl:sameAs ?sameas . }
-	OPTIONAL { ?uri dc:description ?desc . }
-	OPTIONAL { ?uri dc:description ?desc . }
-	OPTIONAL { ?uri vcard:hasTelephone ?hasTel . }
-	OPTIONAL { ?hasTel vcard:value ?tel . }
-	OPTIONAL { ?uri vcard:hasEmail ?hasEmail . }
-	OPTIONAL { ?hasEmail vcard:value ?email . }
-	OPTIONAL { ?uri essglobal:primarySector ?primaryActivity . }
-	OPTIONAL { ?uri essglobal:organisationalStructure ?regorg . }
-	OPTIONAL { ?uri essglobal:economicSector ?activity . }
-	OPTIONAL { ?uri essglobal:hasAddress ?addr . }
-	OPTIONAL { ?addr vcard:street-address ?street . }
-	OPTIONAL { ?addr vcard:postal-code ?postcode . }
-	OPTIONAL { ?addr vcard:locality ?locality . }
-	OPTIONAL { ?addr osspatialrelations:within ?within . }
-	OPTIONAL { ?addr geo:lat ?manLat . } 
-	OPTIONAL { ?addr geo:long ?manLng . }
-	OPTIONAL { ?within geo:lat ?lat. }
-	OPTIONAL { ?within geo:long ?lng. }
+        ?uri rdf:type essglobal:SSEInitiative .
+        ?uri gr:name ?name .
+        OPTIONAL { ?uri foaf:homepage ?www . }
+        OPTIONAL { ?uri owl:sameAs ?sameas . }
+        OPTIONAL { ?uri dc:description ?desc . }
+        OPTIONAL { ?uri dc:description ?desc . }
+        OPTIONAL {
+            ?uri foaf:account ?accountf .
+            ?accountf foaf:accountServiceHomepage "https://facebook.com/" .
+            ?accountf foaf:accountName ?facebook .
+        }
+        OPTIONAL {
+            ?uri foaf:account ?account .
+            ?account foaf:accountServiceHomepage "https://twitter.com/" .
+            ?account foaf:accountName ?twitter .
+        }
+        OPTIONAL { ?uri vcard:hasTelephone ?hasTel . }
+        OPTIONAL { ?hasTel vcard:value ?tel . }
+        OPTIONAL { ?uri vcard:hasEmail ?hasEmail . }
+        OPTIONAL { ?hasEmail vcard:value ?email . }
+        OPTIONAL { ?uri essglobal:primarySector ?primaryActivity . }
+        OPTIONAL { ?uri essglobal:organisationalStructure ?regorg . }
+        OPTIONAL { ?uri essglobal:economicSector ?activity . }
+        OPTIONAL { ?uri essglobal:hasAddress ?addr . }
+        OPTIONAL { ?addr vcard:street-address ?street . }
+        OPTIONAL { ?addr vcard:postal-code ?postcode . }
+        OPTIONAL { ?addr vcard:locality ?locality . }
+        OPTIONAL { ?addr osspatialrelations:within ?within . }
+        OPTIONAL { ?addr geo:lat ?manLat . } 
+        OPTIONAL { ?addr geo:long ?manLng . }
+        OPTIONAL { ?within geo:lat ?lat. }
+        OPTIONAL { ?within geo:long ?lng. }
 }
 ORDER BY DESC(UCASE(?name))
