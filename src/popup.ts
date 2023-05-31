@@ -114,9 +114,11 @@ export function getPopup(initiative: Initiative, sse_initiatives: DataServices) 
   let popupHTML = `
     <div class="sea-initiative-details">
       <h2 class="sea-initiative-name">${initiative.name}</h2>
+<!--
       <h4 class="sea-initiative-economic-activity">${getPrimaryActivity(initiative, values[activtiesUri])}</h4>
       <h4 class="sea-initiative-secondary-activity">${getSecondaryActivities(initiative, values[activtiesUri], labels)}</h5>
       <h4 class="sea-initiative-org-structure">${getOrgStructure(initiative, values[orgStructUri])}</h4>
+-->
       <p>${initiative.desc || ''}</p>
     </div>
     
