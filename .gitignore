@@ -24,6 +24,7 @@ junk
 
 # generated files
 /build/
-/config/version.json
 /node_modules/
 npm-debug.log
+/src/version.json
+/config/config.json
