@@ -17,7 +17,7 @@
   "license": "UNLICENSED",
   "repository": "github:DigitalCommons/mersey-green-project",
   "dependencies": {
-    "mykomap": "github:DigitalCommons/mykomap#v3.0.6"
+    "mykomap": "github:DigitalCommons/mykomap#v3.0.8"
   },
   "devDependencies": {}
 }
