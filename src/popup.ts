@@ -105,10 +105,10 @@ function getTwitter(initiative: Initiative) {
   return '';
 }
 
-export function getPopup(initiative: Initiative, sse_initiatives: DataServices) {
-  const getTerm = sse_initiatives.getVocabs().getTerm;
-  const values = sse_initiatives.getLocalisedVocabs();
-  const labels = sse_initiatives.getFunctionalLabels();
+export function getPopup(initiative: Initiative, dataservices: DataServices) {
+  const getTerm = dataservices.getVocabs().getTerm;
+  const values = dataservices.getLocalisedVocabs();
+  const labels = dataservices.getFunctionalLabels();
   const activtiesUri = "am:";
   const orgStructUri = "os:";
   let popupHTML = `
