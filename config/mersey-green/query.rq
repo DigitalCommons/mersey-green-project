@@ -2,7 +2,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX dc: <http://purl.org/dc/terms/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-PREFIX essglobal: <https://w3id.solidarityeconomy.coop/essglobal/V2a/vocab/>
+PREFIX essglobal: <https://dev.lod.coop/essglobal/V2a/vocab/>
 PREFIX gr: <http://purl.org/goodrelations/v1#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX osspatialrelations: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>

@@ -56,14 +56,14 @@ export const config: ConfigData = new ConfigData({
   language: 'EN',
   vocabularies: [
     {
-      id: 'solidarity-vocab',
+      id: 'essglobal-vocab',
       type: 'hostSparql',
-      label: 'Solidarity',
-      endpoint: 'http://dev.data.solidarityeconomy.coop:8890/sparql',
+      label: 'essglobal',
+      endpoint: 'http://dev.data.digitalcommons.coop:8890/sparql',
 	    defaultGraphUri: 'https://dev.lod.coop/sea-lod/mersey-green',
       uris: {
-        'https://w3id.solidarityeconomy.coop/essglobal/V2a/standard/activities-modified/': 'am',
-        'https://w3id.solidarityeconomy.coop/essglobal/V2a/standard/organisational-structure/': 'os',
+        'https://dev.lod.coop/essglobal/V2a/standard/activities-modified/': 'am',
+        'https://dev.lod.coop/essglobal/V2a/standard/organisational-structure/': 'os',
       },
     },
   ],
