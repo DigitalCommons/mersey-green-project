@@ -1,6 +1,6 @@
 import { DataServices } from "mykomap/app/model/data-services";
 import { Initiative } from "mykomap/app/model/initiative";
-import { PopupApi } from "./popup-api";
+import { PopupApi } from "mykomap/popup-api";
 
 
 export function getPopup(initiative: Initiative, dataServices: DataServices) {
